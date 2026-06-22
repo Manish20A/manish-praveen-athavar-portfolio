@@ -3,242 +3,600 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OptiShrink Pro — Fast Client-Side Image Compressor & Resizer</title>
-    <!-- Meta tags for SEO -->
-    <meta name="description" content="Free online client-side image compressor, resizer, and converter. Batch compress JPEG, PNG, and WebP images instantly with 100% privacy—no server uploads.">
-    <meta name="keywords" content="image compressor, image resizer, webp converter, png compressor, client-side, local image compression, free web tool">
+    <title>Manish Praveen Athavar — Software Engineer & Builder Portfolio</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Manish Praveen Athavar, a Computer Science & Engineering student at Srinivas Institute of Technology and an authentic builder of high-yield systems and automation workflows.">
+    <meta name="keywords" content="Manish Praveen Athavar, Manish Athavar, Software Engineer, Portfolio, Full-Stack Developer, Srinivas Institute of Technology, Mangaluru, LiveScoreX, CodeMotion, VidGen-AI">
     <meta name="author" content="Manish Praveen Athavar">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Main Stylesheet -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="glow-bg"></div>
+<body class="dark-theme">
+    <div class="glow-overlay-bg"></div>
 
-    <header class="app-header">
-        <div class="logo">
-            <span class="logo-icon"><i class="fa-solid fa-bolt-lightning"></i></span>
-            <div class="logo-text">
-                <h1>OptiShrink <span>Pro</span></h1>
-                <p>Ultra-Fast, 100% Private Client-Side Image Optimizer</p>
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-symbol">&lt;M/&gt;</span>
+                <span class="logo-text">Manish <span>Athavar</span></span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#why-me" class="nav-link">Why Hire Me</a>
+                <a href="#terminal-section" class="nav-link">Terminal</a>
+                <a href="#contact" class="btn btn-nav-contact">Get In Touch</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="btn-theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
             </div>
-        </div>
-        <div class="header-badge">
-            <span class="status-pulse"></span>
-            <span>Local Processing Active</span>
         </div>
     </header>
 
-    <main class="app-container">
-        <!-- Step 1: Upload / Drop Zone -->
-        <section class="upload-section">
-            <div id="drop-zone" class="drop-zone">
-                <input type="file" id="file-input" multiple accept="image/*" class="file-input">
-                <div class="drop-zone-content">
-                    <div class="upload-icon">
-                        <i class="fa-solid fa-cloud-arrow-up"></i>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <span class="badge-status">
+                        <span class="pulse-dot"></span> Available for Developer & Automation Roles
+                    </span>
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="highlight">Manish</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        I am an <span id="typewriter-text" class="text-gradient"></span><span class="cursor">|</span>
+                    </h2>
+                    <p class="hero-description">
+                        7th-semester Computer Science & Engineering student at <strong>Srinivas Institute of Technology</strong> with an international foundation from ADNOC Schools in the UAE. I excel at bridging the gap between complex technical logic and real-world execution.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-code"></i> View Projects</a>
+                        <a href="#contact" class="btn btn-outline">Let's Connect <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                    <h2>Drag & drop your images here</h2>
-                    <p>Supports JPEG, PNG, WebP, GIF, and SVG. Up to 50MB per file.</p>
-                    <button class="btn btn-primary" onclick="document.getElementById('file-input').click()">
-                        <i class="fa-solid fa-folder-open"></i> Browse Files
-                    </button>
+                    <div class="hero-socials">
+                        <a href="https://github.com/Manish20A" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/manish-athavar-/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="mailto:manishathavar20@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                    </div>
                 </div>
+                <div class="hero-image-wrapper">
+                    <div class="portrait-container">
+                        <div class="glow-aurora"></div>
+                        <div class="portrait-frame">
+                            <img src="assets/images/portrait.png" alt="Manish Praveen Athavar Portrait" class="portrait-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-down-indicator">
+                <a href="#about" aria-label="Scroll Down">
+                    <span class="mouse">
+                        <span class="wheel"></span>
+                    </span>
+                </a>
             </div>
         </section>
 
-        <!-- Main Workspace (Hidden by default, shown when images are uploaded) -->
-        <section id="workspace" class="workspace hidden">
-            <!-- Active Image Preview & Side-by-Side Comparison -->
-            <div class="preview-container card">
-                <div class="card-header">
-                    <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Visual Quality Comparison</h3>
-                    <div class="preview-controls">
-                        <button id="btn-toggle-fit" class="btn btn-icon" title="Toggle Fit/Original"><i class="fa-solid fa-expand"></i></button>
-                        <span id="current-image-name" class="image-name">image.jpg</span>
-                    </div>
+        <!-- About Me Section -->
+        <section class="about-section" id="about">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tagline">My Background</span>
+                    <h2 class="section-title">The "Builder" Mindset</h2>
+                    <div class="section-line"></div>
                 </div>
                 
-                <div class="comparison-slider-wrapper">
-                    <div id="comparison-slider" class="comparison-slider">
-                        <!-- Before Image (Original) -->
-                        <div class="slider-layer layer-before">
-                            <img id="img-before" src="" alt="Original Image">
-                            <div class="layer-label label-before">Original <span id="size-before">0 KB</span></div>
-                        </div>
-                        
-                        <!-- After Image (Compressed) -->
-                        <div class="slider-layer layer-after">
-                            <img id="img-after" src="" alt="Compressed Image">
-                            <div class="layer-label label-after">Optimized <span id="size-after">0 KB</span> <span id="percent-saved" class="saving-badge">-50%</span></div>
-                        </div>
-                        
-                        <!-- Slider Bar & Handle -->
-                        <div id="slider-handle" class="slider-handle">
-                            <div class="handle-button">
-                                <i class="fa-solid fa-arrows-left-right"></i>
+                <div class="about-grid">
+                    <div class="about-text-card card glass">
+                        <h3>Who I Am</h3>
+                        <p>
+                            I am a proactive leader and a hands-on developer who builds high-yield systems and automates workflows. Unlike developers who operate strictly in silos, I thrive on taking ownership from brainstorming to actual cloud deployment.
+                        </p>
+                        <p>
+                            My early life in the UAE at ADNOC Schools taught me global perspectives, while my technical education in India sharpened my analytical capabilities. Supported by a <strong>6.5 IELTS score</strong>, I communicate effortlessly in cross-cultural, diverse, and remote team environments.
+                        </p>
+                        <div class="quick-facts">
+                            <div class="fact-item">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <div>
+                                    <strong>Education</strong>
+                                    <span>B.E. in Computer Science & Engineering</span>
+                                </div>
+                            </div>
+                            <div class="fact-item">
+                                <i class="fa-solid fa-globe"></i>
+                                <div>
+                                    <strong>Global Adaptability</strong>
+                                    <span>UAE Schooling & IELTS 6.5</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Spinner overlay during processing -->
-                    <div id="processing-overlay" class="processing-overlay hidden">
-                        <div class="spinner"></div>
-                        <p>Optimizing image...</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Compression & Resizing Controls -->
-            <div class="controls-container card">
-                <div class="card-header">
-                    <h3><i class="fa-solid fa-sliders"></i> Optimization Settings</h3>
-                </div>
-                
-                <div class="control-group">
-                    <label for="range-quality">
-                        <span><i class="fa-solid fa-gauge-high"></i> Compression Quality</span>
-                        <span id="quality-val" class="badge">80%</span>
-                    </label>
-                    <input type="range" id="range-quality" min="5" max="100" value="80" class="range-slider">
-                    <div class="range-labels">
-                        <span>Max Compression</span>
-                        <span>Balanced</span>
-                        <span>Best Quality</span>
-                    </div>
-                </div>
-
-                <div class="control-row">
-                    <div class="control-group half">
-                        <label for="select-format"><i class="fa-solid fa-file-export"></i> Output Format</label>
-                        <select id="select-format">
-                            <option value="original">Keep Original Format</option>
-                            <option value="image/jpeg">JPEG (Lossy, High Comp)</option>
-                            <option value="image/webp" selected>WebP (Next-Gen, Excellent)</option>
-                            <option value="image/png">PNG (Lossless, Transparent)</option>
-                        </select>
-                    </div>
                     
-                    <div class="control-group half">
-                        <label for="select-resize"><i class="fa-solid fa-crop-simple"></i> Resize Scale</label>
-                        <select id="select-resize">
-                            <option value="1">Original Dimensions (100%)</option>
-                            <option value="0.75">75% of original</option>
-                            <option value="0.5">50% of original</option>
-                            <option value="0.25">25% of original</option>
-                            <option value="custom">Custom Width / Height</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Custom Dimensions inputs, shown only when Resize Scale is 'custom' -->
-                <div id="custom-dimensions" class="custom-dimensions hidden">
-                    <div class="control-row">
-                        <div class="control-group half">
-                            <label for="input-width">Width (px)</label>
-                            <input type="number" id="input-width" min="1" placeholder="Width">
+                    <div class="about-stats-card card glass">
+                        <h3>Core Pillars</h3>
+                        <div class="pillars-container">
+                            <div class="pillar-item">
+                                <div class="pillar-header">
+                                    <span class="pillar-title">Technical Strategy & Architecture</span>
+                                    <span class="pillar-value">92%</span>
+                                </div>
+                                <div class="pillar-bar"><div class="pillar-fill" style="width: 92%"></div></div>
+                            </div>
+                            <div class="pillar-item">
+                                <div class="pillar-header">
+                                    <span class="pillar-title">Workflow & Process Automation</span>
+                                    <span class="pillar-value">95%</span>
+                                </div>
+                                <div class="pillar-bar"><div class="pillar-fill" style="width: 95%"></div></div>
+                            </div>
+                            <div class="pillar-item">
+                                <div class="pillar-header">
+                                    <span class="pillar-title">Technical Leadership & Mentoring</span>
+                                    <span class="pillar-value">88%</span>
+                                </div>
+                                <div class="pillar-bar"><div class="pillar-fill" style="width: 88%"></div></div>
+                            </div>
+                            <div class="pillar-item">
+                                <div class="pillar-header">
+                                    <span class="pillar-title">Cross-Cultural Collaboration</span>
+                                    <span class="pillar-value">90%</span>
+                                </div>
+                                <div class="pillar-bar"><div class="pillar-fill" style="width: 90%"></div></div>
+                            </div>
                         </div>
-                        <div class="control-group half">
-                            <label for="input-height">Height (px)</label>
-                            <input type="number" id="input-height" min="1" placeholder="Height">
-                        </div>
                     </div>
-                    <div class="checkbox-group">
-                        <label for="check-aspect" class="checkbox-label">
-                            <input type="checkbox" id="check-aspect" checked>
-                            <span>Lock Aspect Ratio</span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="action-buttons">
-                    <a id="btn-download-single" href="#" download class="btn btn-success btn-block">
-                        <i class="fa-solid fa-download"></i> Download Optimized Image
-                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Batch Queue Section (Hidden by default, shown when images are uploaded) -->
-        <section id="queue-section" class="queue-section card hidden">
-            <div class="card-header">
-                <h3><i class="fa-solid fa-list-check"></i> Compression Queue (<span id="queue-count">0</span> files)</h3>
-                <button id="btn-download-all" class="btn btn-secondary btn-sm">
-                    <i class="fa-solid fa-file-zipper"></i> Download All as ZIP
-                </button>
-            </div>
-            <div class="queue-table-wrapper">
-                <table class="queue-table">
-                    <thead>
-                        <tr>
-                            <th>Preview</th>
-                            <th>Filename</th>
-                            <th>Original Size</th>
-                            <th>Optimized Size</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="queue-list">
-                        <!-- Filled by JS -->
-                    </tbody>
-                </table>
+        <!-- Skills Section -->
+        <section class="skills-section" id="skills">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tagline">My Stack</span>
+                    <h2 class="section-title">Technical Expertise</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="skills-tabs-container">
+                    <div class="skills-tabs">
+                        <button class="tab-btn active" onclick="switchSkillTab(event, 'development')">Languages & Dev</button>
+                        <button class="tab-btn" onclick="switchSkillTab(event, 'ai-data')">AI & Cloud/Databases</button>
+                        <button class="tab-btn" onclick="switchSkillTab(event, 'soft-skills')">Leadership & Strengths</button>
+                    </div>
+
+                    <div id="development" class="tab-content active">
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+                                <h4>JavaScript / ES6+</h4>
+                                <p>Dynamic scripting and DOM manipulation</p>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+                                <h4>Python</h4>
+                                <p>Automation scripts, ML pipelines, RAG</p>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-brands fa-java"></i></div>
+                                <h4>Java</h4>
+                                <p>Object-oriented logic & system software</p>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+                                <h4>C / C++</h4>
+                                <p>Low-level systems and algorithms</p>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-brands fa-php"></i></div>
+                                <h4>PHP</h4>
+                                <p>Backend infrastructure, legacy integrations</p>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-brands fa-flutter"></i></div>
+                                <h4>Flutter</h4>
+                                <p>Cross-platform mobile applications</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="ai-data" class="tab-content">
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-solid fa-robot"></i></div>
+                                <h4>LLMs & Prompt Eng.</h4>
+                                <p>Structured system prompts for Gemini & OpenAI</p>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                                <h4>RAG Architectures</h4>
+                                <p>Retrieval-Augmented Generation systems</p>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+                                <h4>SQL & MongoDB</h4>
+                                <p>Relational databases and NoSQL stores</p>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-solid fa-fire"></i></div>
+                                <h4>Firebase</h4>
+                                <p>Authentication, Realtime Database, Firestore</p>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-brands fa-aws"></i></div>
+                                <h4>Cloud / AWS</h4>
+                                <p>API hosting, serverless scripts, Vercel</p>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>
+                                <h4>R Language</h4>
+                                <p>Statistical computing and data analytics</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="soft-skills" class="tab-content">
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-solid fa-comments"></i></div>
+                                <h4>Global Communication</h4>
+                                <p>6.5 IELTS, ADNOC Schools international background</p>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-solid fa-users"></i></div>
+                                <h4>Technical Leadership</h4>
+                                <p>Class Representative, NGO team coordinator</p>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                                <h4>Rapid Adaptation</h4>
+                                <p>Documentation-driven self-teaching on new APIs</p>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-solid fa-gears"></i></div>
+                                <h4>Workflow Automation</h4>
+                                <p>Translating business needs into automated jobs</p>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-solid fa-user-tie"></i></div>
+                                <h4>Product Mindset</h4>
+                                <p>Designing for real-world constraints over theories</p>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon"><i class="fa-solid fa-microphone"></i></div>
+                                <h4>Public Speaking</h4>
+                                <p>High-impact presentations and stakeholder updates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Features Grid -->
-        <section class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <h3>100% Safe & Private</h3>
-                <p>Images never touch any external server. All compression and resizing take place locally on your own machine in milliseconds.</p>
+        <!-- Projects Section -->
+        <section class="projects-section" id="projects">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tagline">My Works</span>
+                    <h2 class="section-title">Key Projects & Impact</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: LiveScoreX -->
+                    <div class="project-card card glass">
+                        <div class="project-header">
+                            <span class="project-category"><i class="fa-brands fa-chrome"></i> Chrome Extension</span>
+                            <h3 class="project-title">LiveScoreX</h3>
+                        </div>
+                        <p class="project-description">
+                            A real-time sports tracking Chrome extension co-developed to deliver live scores instantly. Engineered with an ultra-low-latency data-fetching system and zero-footprint background scripts to prevent CPU degradation.
+                        </p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>Extension API</span>
+                            <span>Low Latency</span>
+                            <span>JSON/REST</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="project-status"><i class="fa-solid fa-users-gear"></i> Co-Developed</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: CodeMotion -->
+                    <div class="project-card card glass">
+                        <div class="project-header">
+                            <span class="project-category"><i class="fa-solid fa-desktop"></i> Web App</span>
+                            <h3 class="project-title">CodeMotion</h3>
+                        </div>
+                        <p class="project-description">
+                            Interactive typing simulator that mimics the Visual Studio Code interface. Allows educational creators to input files and export mock typing recordings overlaid onto video content for motion graphics.
+                        </p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>CSS Variables</span>
+                            <span>Typing Engine</span>
+                            <span>Canvas/Media</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="project-status"><i class="fa-solid fa-code"></i> Main Developer</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: VidGen-AI -->
+                    <div class="project-card card glass">
+                        <div class="project-header">
+                            <span class="project-category"><i class="fa-solid fa-robot"></i> Generative AI Pipeline</span>
+                            <h3 class="project-title">VidGen-AI</h3>
+                        </div>
+                        <p class="project-description">
+                            An automated pipeline mapping structured prompt inputs to programmatic media. Combines Vidrush.ai with Remotion and the Gemini API to orchestrate end-to-end video asset synthesis.
+                        </p>
+                        <div class="project-tags">
+                            <span>Gemini API</span>
+                            <span>Remotion</span>
+                            <span>NodeJS</span>
+                            <span>Prompt Engineering</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="project-status"><i class="fa-solid fa-chart-pie"></i> Prototyped</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: OptiShrink Pro -->
+                    <div class="project-card card glass highlight-project">
+                        <div class="project-header">
+                            <span class="project-category"><i class="fa-solid fa-image"></i> Utilities</span>
+                            <h3 class="project-title">OptiShrink Pro</h3>
+                        </div>
+                        <p class="project-description">
+                            Ultra-fast, 100% private client-side image compressor. Uses HTML5 Canvas to optimize sizes (JPEG/PNG/WebP) locally on the client browser without any external API calls, safeguarding complete data privacy.
+                        </p>
+                        <div class="project-tags">
+                            <span>HTML5 Canvas</span>
+                            <span>Vanilla JS</span>
+                            <span>Client-Side</span>
+                            <span>JSZip</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="projects/optishrink/index.html" class="btn-live-link" target="_blank">
+                                <i class="fa-solid fa-circle-play"></i> Try Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Savayava NGO -->
+                    <div class="project-card card glass">
+                        <div class="project-header">
+                            <span class="project-category"><i class="fa-solid fa-hands-holding-heart"></i> Digital Transformation</span>
+                            <h3 class="project-title">Savayava NGO</h3>
+                        </div>
+                        <p class="project-description">
+                            Technical volunteer revamp of digital infrastructure. Optimized the website frontend and databases (PHP/SQL), scaling traffic to hundreds of monthly visitors and securing a regional radio feature.
+                        </p>
+                        <div class="project-tags">
+                            <span>PHP</span>
+                            <span>SQL</span>
+                            <span>UI Refactoring</span>
+                            <span>SEO Growth</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="project-status"><i class="fa-solid fa-heart"></i> Volunteering</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: Nisarga Organic -->
+                    <div class="project-card card glass">
+                        <div class="project-header">
+                            <span class="project-category"><i class="fa-solid fa-basket-shopping"></i> E-Commerce Prototype</span>
+                            <h3 class="project-title">Nisarga Organic</h3>
+                        </div>
+                        <p class="project-description">
+                            A hyper-local organic grocery marketplace concept for Mangalore. Integrates multi-store routing (Swiggy API concept), recurring subscriptions, vendor dashboards, and advertisement delivery widgets.
+                        </p>
+                        <div class="project-tags">
+                            <span>Figma</span>
+                            <span>API Routing</span>
+                            <span>E-Commerce</span>
+                            <span>Vendor System</span>
+                        </div>
+                        <div class="project-links">
+                            <span class="project-status"><i class="fa-solid fa-compass"></i> Architecture</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
-                <h3>Next-Gen Compression</h3>
-                <p>Convert standard PNG/JPG to WebP format to save up to 80% on file size without losing noticeability in visual quality.</p>
+        </section>
+
+        <!-- Why Hire Me Section -->
+        <section class="why-me-section" id="why-me">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tagline">Value Proposition</span>
+                    <h2 class="section-title">Why Hire Me?</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="why-me-grid">
+                    <div class="why-card card glass">
+                        <div class="why-icon"><i class="fa-solid fa-gears"></i></div>
+                        <h3>1. Production over Theory</h3>
+                        <p>
+                            My focus is on shipping code that works under constraints. I design systems with latency, client-side capacity, and state management in mind rather than basic code snippets.
+                        </p>
+                    </div>
+                    <div class="why-card card glass">
+                        <div class="why-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3>2. Growth & Automation stacked</h3>
+                        <p>
+                            From standard Flutter client shells to backend automation scripts, I carry a diverse toolbox (Python, Java, C++, JS, PHP, SQL, R) to automate workflows and accelerate code execution.
+                        </p>
+                    </div>
+                    <div class="why-card card glass">
+                        <div class="why-icon"><i class="fa-solid fa-users-rectangle"></i></div>
+                        <h3>3. Technical Leadership</h3>
+                        <p>
+                            Having served as Class Representative and managing IT for Savayava NGO, I bridges gaps. I translate complex architectural systems into growth directives non-technical stakeholders understand.
+                        </p>
+                    </div>
+                    <div class="why-card card glass">
+                        <div class="why-icon"><i class="fa-solid fa-rabbit-fast"></i></div>
+                        <h3>4. Rapid Adapter</h3>
+                        <p>
+                            I pick up libraries and SDKs through straight documentation exploration. I've designed workflows involving cutting edge LLMs, RAG structures, and cloud configurations without hand-holding.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fa-solid fa-layer-group"></i></div>
-                <h3>Batch Processing</h3>
-                <p>Upload dozens of images at once, adjust settings dynamically, and download them individually or grouped in a single click.</p>
+        </section>
+
+        <!-- Developer Terminal Section -->
+        <section class="terminal-section" id="terminal-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tagline">Interactive Shell</span>
+                    <h2 class="section-title">Query My Profile</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="terminal-container card">
+                    <div class="terminal-bar">
+                        <div class="terminal-buttons">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="terminal-title">manish@athavar-shell ~ bash</div>
+                        <div class="terminal-status"><i class="fa-solid fa-wifi"></i> Online</div>
+                    </div>
+                    <div class="terminal-body" id="terminal-body">
+                        <div class="terminal-row">Welcome to Manish Athavar's interactive portfolio console [Version 2.4]</div>
+                        <div class="terminal-row text-comment"># Type 'help' to see all available commands. Try running 'about' or 'projects'.</div>
+                        <div class="terminal-row prompt-row">
+                            <span class="prompt-symbol">manish@portfolio:~$</span>
+                            <input type="text" class="terminal-input" id="terminal-input" autofocus autocomplete="off" spellcheck="false" placeholder="Type command...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tagline">Contact Me</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Let's build something great</h3>
+                        <p>
+                            Whether you have an opening on your development team, need a technical automation volunteer, or just want to talk about system automation, I'm always open to discussing new opportunities.
+                        </p>
+                        
+                        <div class="contact-details">
+                            <a href="mailto:manishathavar20@gmail.com" class="contact-item">
+                                <i class="fa-regular fa-envelope"></i>
+                                <div>
+                                    <strong>Email Me</strong>
+                                    <span>manishathavar20@gmail.com</span>
+                                </div>
+                            </a>
+                            <a href="https://www.linkedin.com/in/manish-athavar-/" target="_blank" class="contact-item">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                                <div>
+                                    <strong>LinkedIn</strong>
+                                    <span>linkedin.com/in/manish-athavar-</span>
+                                </div>
+                            </a>
+                            <a href="https://github.com/Manish20A" target="_blank" class="contact-item">
+                                <i class="fa-brands fa-github"></i>
+                                <div>
+                                    <strong>GitHub</strong>
+                                    <span>github.com/Manish20A</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container card glass">
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)">
+                            <div class="form-group">
+                                <input type="text" id="user-name" required placeholder=" ">
+                                <label for="user-name">Your Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="user-email" required placeholder=" ">
+                                <label for="user-email">Your Email</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="user-subject" required placeholder=" ">
+                                <label for="user-subject">Subject</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="user-message" required placeholder=" "></textarea>
+                                <label for="user-message">Your Message</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        <div id="form-success-overlay" class="form-success-overlay hidden">
+                            <div class="success-icon"><i class="fa-solid fa-envelope-circle-check"></i></div>
+                            <h3>Message Sent!</h3>
+                            <p>Thank you for reaching out, Manish will get back to you shortly.</p>
+                            <button onclick="resetContactForm()" class="btn btn-outline">Send Another</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="app-footer">
+    <!-- Footer -->
+    <footer class="main-footer">
         <div class="footer-container">
-            <div class="author-profile">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=256&auto=format&fit=crop" alt="Manish Praveen Athavar" class="avatar" id="author-avatar">
-                <div class="author-details">
-                    <h4>Manish Praveen Athavar</h4>
-                    <p class="role">Custom Software Developer</p>
-                    <p class="contact"><i class="fa-regular fa-envelope"></i> <a href="mailto:manishathavar20@gmail.com">manishathavar20@gmail.com</a></p>
-                </div>
+            <div class="footer-brand">
+                <span class="logo-symbol">&lt;M/&gt;</span>
+                <p>Building high-yield software solutions and automations.</p>
             </div>
-            
-            <div class="footer-actions">
-                <a href="https://digitalheroesco.com" target="_blank" rel="noopener noreferrer" class="btn-hero" id="btn-digital-heroes">
-                    <span>Built for Digital Heroes</span>
-                    <i class="fa-solid fa-arrow-right-long"></i>
-                </a>
-                <a href="https://github.com/Manish20A/image-compressor-tool" target="_blank" rel="noopener noreferrer" class="btn-github">
-                    <i class="fa-brands fa-github"></i> GitHub Codebase
-                </a>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#why-me">Why Me</a>
+                <a href="projects/optishrink/index.html" target="_blank">OptiShrink Pro</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 OptiShrink Pro. Built using Google Antigravity & Vercel. 100% Free.</p>
+            <p>&copy; 2026 Manish Praveen Athavar. Built with Google Antigravity & Vercel. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- JS dependencies if any, followed by main logic -->
-    <!-- JSZip for batch downloading -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- Custom Script -->
     <script src="app.js"></script>
 </body>
 </html>

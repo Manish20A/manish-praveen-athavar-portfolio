@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiShrink Pro — Fast Client-Side Image Compressor & Resizer</title>
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Free online client-side image compressor, resizer, and converter. Batch compress JPEG, PNG, and WebP images instantly with 100% privacy—no server uploads.">
+    <meta name="keywords" content="image compressor, image resizer, webp converter, png compressor, client-side, local image compression, free web tool">
+    <meta name="author" content="Manish Praveen Athavar">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="glow-bg"></div>
+
+    <header class="app-header">
+        <div class="logo">
+            <span class="logo-icon"><i class="fa-solid fa-bolt-lightning"></i></span>
+            <div class="logo-text">
+                <h1>OptiShrink <span>Pro</span></h1>
+                <p>Ultra-Fast, 100% Private Client-Side Image Optimizer</p>
+            </div>
+        </div>
+        <div class="header-badge">
+            <span class="status-pulse"></span>
+            <span>Local Processing Active</span>
+        </div>
+    </header>
+
+    <main class="app-container">
+        <!-- Step 1: Upload / Drop Zone -->
+        <section class="upload-section">
+            <div id="drop-zone" class="drop-zone">
+                <input type="file" id="file-input" multiple accept="image/*" class="file-input">
+                <div class="drop-zone-content">
+                    <div class="upload-icon">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    </div>
+                    <h2>Drag & drop your images here</h2>
+                    <p>Supports JPEG, PNG, WebP, GIF, and SVG. Up to 50MB per file.</p>
+                    <button class="btn btn-primary" onclick="document.getElementById('file-input').click()">
+                        <i class="fa-solid fa-folder-open"></i> Browse Files
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Workspace (Hidden by default, shown when images are uploaded) -->
+        <section id="workspace" class="workspace hidden">
+            <!-- Active Image Preview & Side-by-Side Comparison -->
+            <div class="preview-container card">
+                <div class="card-header">
+                    <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Visual Quality Comparison</h3>
+                    <div class="preview-controls">
+                        <button id="btn-toggle-fit" class="btn btn-icon" title="Toggle Fit/Original"><i class="fa-solid fa-expand"></i></button>
+                        <span id="current-image-name" class="image-name">image.jpg</span>
+                    </div>
+                </div>
+                
+                <div class="comparison-slider-wrapper">
+                    <div id="comparison-slider" class="comparison-slider">
+                        <!-- Before Image (Original) -->
+                        <div class="slider-layer layer-before">
+                            <img id="img-before" src="" alt="Original Image">
+                            <div class="layer-label label-before">Original <span id="size-before">0 KB</span></div>
+                        </div>
+                        
+                        <!-- After Image (Compressed) -->
+                        <div class="slider-layer layer-after">
+                            <img id="img-after" src="" alt="Compressed Image">
+                            <div class="layer-label label-after">Optimized <span id="size-after">0 KB</span> <span id="percent-saved" class="saving-badge">-50%</span></div>
+                        </div>
+                        
+                        <!-- Slider Bar & Handle -->
+                        <div id="slider-handle" class="slider-handle">
+                            <div class="handle-button">
+                                <i class="fa-solid fa-arrows-left-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Spinner overlay during processing -->
+                    <div id="processing-overlay" class="processing-overlay hidden">
+                        <div class="spinner"></div>
+                        <p>Optimizing image...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compression & Resizing Controls -->
+            <div class="controls-container card">
+                <div class="card-header">
+                    <h3><i class="fa-solid fa-sliders"></i> Optimization Settings</h3>
+                </div>
+                
+                <div class="control-group">
+                    <label for="range-quality">
+                        <span><i class="fa-solid fa-gauge-high"></i> Compression Quality</span>
+                        <span id="quality-val" class="badge">80%</span>
+                    </label>
+                    <input type="range" id="range-quality" min="5" max="100" value="80" class="range-slider">
+                    <div class="range-labels">
+                        <span>Max Compression</span>
+                        <span>Balanced</span>
+                        <span>Best Quality</span>
+                    </div>
+                </div>
+
+                <div class="control-row">
+                    <div class="control-group half">
+                        <label for="select-format"><i class="fa-solid fa-file-export"></i> Output Format</label>
+                        <select id="select-format">
+                            <option value="original">Keep Original Format</option>
+                            <option value="image/jpeg">JPEG (Lossy, High Comp)</option>
+                            <option value="image/webp" selected>WebP (Next-Gen, Excellent)</option>
+                            <option value="image/png">PNG (Lossless, Transparent)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="control-group half">
+                        <label for="select-resize"><i class="fa-solid fa-crop-simple"></i> Resize Scale</label>
+                        <select id="select-resize">
+                            <option value="1">Original Dimensions (100%)</option>
+                            <option value="0.75">75% of original</option>
+                            <option value="0.5">50% of original</option>
+                            <option value="0.25">25% of original</option>
+                            <option value="custom">Custom Width / Height</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Custom Dimensions inputs, shown only when Resize Scale is 'custom' -->
+                <div id="custom-dimensions" class="custom-dimensions hidden">
+                    <div class="control-row">
+                        <div class="control-group half">
+                            <label for="input-width">Width (px)</label>
+                            <input type="number" id="input-width" min="1" placeholder="Width">
+                        </div>
+                        <div class="control-group half">
+                            <label for="input-height">Height (px)</label>
+                            <input type="number" id="input-height" min="1" placeholder="Height">
+                        </div>
+                    </div>
+                    <div class="checkbox-group">
+                        <label for="check-aspect" class="checkbox-label">
+                            <input type="checkbox" id="check-aspect" checked>
+                            <span>Lock Aspect Ratio</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <a id="btn-download-single" href="#" download class="btn btn-success btn-block">
+                        <i class="fa-solid fa-download"></i> Download Optimized Image
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Batch Queue Section (Hidden by default, shown when images are uploaded) -->
+        <section id="queue-section" class="queue-section card hidden">
+            <div class="card-header">
+                <h3><i class="fa-solid fa-list-check"></i> Compression Queue (<span id="queue-count">0</span> files)</h3>
+                <button id="btn-download-all" class="btn btn-secondary btn-sm">
+                    <i class="fa-solid fa-file-zipper"></i> Download All as ZIP
+                </button>
+            </div>
+            <div class="queue-table-wrapper">
+                <table class="queue-table">
+                    <thead>
+                        <tr>
+                            <th>Preview</th>
+                            <th>Filename</th>
+                            <th>Original Size</th>
+                            <th>Optimized Size</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="queue-list">
+                        <!-- Filled by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>100% Safe & Private</h3>
+                <p>Images never touch any external server. All compression and resizing take place locally on your own machine in milliseconds.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Next-Gen Compression</h3>
+                <p>Convert standard PNG/JPG to WebP format to save up to 80% on file size without losing noticeability in visual quality.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <h3>Batch Processing</h3>
+                <p>Upload dozens of images at once, adjust settings dynamically, and download them individually or grouped in a single click.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <div class="footer-container">
+            <div class="author-profile">
+                <img src="../../assets/images/portrait.png" alt="Manish Praveen Athavar" class="avatar" id="author-avatar">
+                <div class="author-details">
+                    <h4>Manish Praveen Athavar</h4>
+                    <p class="role">Custom Software Developer</p>
+                    <p class="contact"><i class="fa-regular fa-envelope"></i> <a href="mailto:manishathavar20@gmail.com">manishathavar20@gmail.com</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-actions">
+                <a href="https://digitalheroesco.com" target="_blank" rel="noopener noreferrer" class="btn-hero" id="btn-digital-heroes">
+                    <span>Built for Digital Heroes</span>
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+                <a href="https://github.com/Manish20A/image-compressor-tool" target="_blank" rel="noopener noreferrer" class="btn-github">
+                    <i class="fa-brands fa-github"></i> GitHub Codebase
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 OptiShrink Pro. Built using Google Antigravity & Vercel. 100% Free.</p>
+        </div>
+    </footer>
+
+    <!-- JS dependencies if any, followed by main logic -->
+    <!-- JSZip for batch downloading -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

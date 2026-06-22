@@ -1,77 +1,78 @@
-# OptiShrink Pro — Client-Side Image Compressor & Resizer
+# Manish Praveen Athavar — Professional Portfolio Website
 
-A premium, high-performance web application for optimizing, compressing, and resizing images. It runs 100% client-side in the browser, ensuring complete privacy, zero server latency, and instant batch processing.
+A highly responsive, glassmorphic personal portfolio website designed for **Manish Praveen Athavar** (Computer Science & Engineering Student at Srinivas Institute of Technology) to showcase technical systems, automation workflows, and active projects.
 
-**Live Link (Vercel):** [https://image-compressor-tool.vercel.app](https://image-compressor-tool.vercel.app) (Replace with your actual Vercel URL once deployed)
-
----
-
-## 🌟 Key Features
-
-- **100% Client-Side Privacy:** Your images never touch any server. All canvas scaling and compression calculations happen directly in your browser using standard HTML5 Canvas APIs.
-- **Visual Split Comparison Slider:** View real-time before/after visual quality side-by-side using an interactive split handle. Compare compression artifacts instantly.
-- **Batch Processing Queue:** Upload dozens of images at once, customize optimization configurations, check sizes/saving stats, and manage them inside an interactive queue table.
-- **Format Conversion:** Convert images on the fly to WebP (Next-Gen), JPEG, or PNG formats.
-- **Dimension Scaling:** Resize images by percentage presets (75%, 50%, 25%) or input custom pixel widths and heights with automatic aspect ratio locking.
-- **Bulk Downloads:** Download optimized files individually, or group-compile the entire completed queue in one click as a ZIP archive.
-- **Responsive Premium UI:** Beautiful dark mode, neon glowing gradients, glassmorphism containers, smooth drag-and-drop support, loading states, and custom transitions.
+Designed to be immediately deployable on **Vercel** with zero build configuration (pure static HTML/CSS/JS architecture).
 
 ---
 
-## 🛠️ Technology Stack
+## 🚀 Key Features
 
-- **Structure:** Semantic HTML5
-- **Style:** Vanilla CSS3 (Custom Design System, Flexbox/Grid layouts, Glassmorphism, CSS Variables)
-- **Logic:** Vanilla ES6 JavaScript
-- **Icons:** FontAwesome (SVG kit CDN)
-- **Fonts:** Google Fonts (Outfit & Inter)
-- **Dependencies:** [JSZip](https://github.com/Stuk/jszip) (loaded via CDN for ZIP bundling)
+1. **Vibrant Glassmorphic Aesthetics**: Built using vanilla CSS HSL colors, backdrop filters, custom card components, and gradients. Optimized for both dark and light modes.
+2. **Interactive Developer Terminal (Console CLI)**: An embedded retro-modern terminal allowing visitors (and recruiters) to interactively query profile sections. Try running `help`, `about`, `skills`, `projects`, or `contact`.
+3. **OptiShrink Pro Live Integration**: Your fully-functional client-side image optimizer tool is preserved and integrated directly in a subdirectory. Visitors can click the project card to run a live demo hosted on your domain.
+4. **Structured Biography & Projects**: Displays your key projects (LiveScoreX, CodeMotion, VidGen-AI, Savayava NGO, and OptiShrink Pro), core values, and communication strengths.
+5. **Interactive Forms & Tooling**: Beautiful floating-label contact form with visual states, submission validation, and mock API latency triggers.
 
 ---
 
-## 🚀 Getting Started
+## 📂 Project Structure
 
-### Prerequisites
+```
+├── index.html                  # Root portfolio page
+├── styles.css                  # Custom styling (HSL variable theme engine)
+├── app.js                      # Custom scripts (typewriter, terminal shell, navigation)
+├── package.json                # Project configuration (start script)
+├── assets/
+│   └── images/
+│       └── portrait.png        # Arms-crossed professional profile portrait
+└── projects/
+    └── optishrink/
+        ├── index.html          # OptiShrink Pro HTML layout
+        ├── styles.css          # OptiShrink Pro layout style
+        └── app.js              # OptiShrink Pro compression engine
+```
 
-You need [Node.js](https://nodejs.org/) installed locally to run the development server.
+---
 
-### Local Installation
+## 💻 Running Locally
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/Manish20A/image-compressor-tool.git
-   cd image-compressor-tool
-   ```
+You can serve this folder locally using the pre-configured `http-server` script:
 
-2. Install the lightweight development server:
+1. Install dependencies (runs a lightweight static server):
    ```bash
    npm install
    ```
-
-3. Start the local server:
+2. Start the local server:
    ```bash
-   npm start
+   npm run start
    ```
-
-4. Open your browser and navigate to:
-   ```
-   http://localhost:3000
-   ```
+3. Open your browser and navigate to `http://localhost:3000`.
 
 ---
 
-## 💼 Developer Information
+## ☁️ Deployment on Vercel
 
-- **Developer Name:** Manish Praveen Athavar
-- **Contact Email:** [manishathavar20@gmail.com](mailto:manishathavar20@gmail.com)
-- **GitHub Profile:** [https://github.com/Manish20A](https://github.com/Manish20A)
+Since this is a static project, you can deploy it to Vercel in just a few seconds:
 
----
+### Method 1: Vercel CLI (Fastest)
+1. Install Vercel globally: `npm install -g vercel`
+2. Run `vercel` in the project root:
+   ```bash
+   vercel
+   ```
+3. Follow the CLI prompts to deploy.
 
-## 🎖️ Digital Heroes Trial Info
-
-This tool has been built as a free, 100% client-side project for the **Digital Heroes Custom Software Developer** trial assessment.
-
-- **₹0 Cost:** No paid libraries, external SaaS dependencies, database hosting, or cloud compute models are used.
-- **Vercel Hobby Deploy:** Configured for instant zero-config deployments to Vercel's free serverless/static hosting tier.
-- **Link Requirement:** Contains the required "Built for Digital Heroes" CTA button linking to `https://digitalheroesco.com`.
+### Method 2: Git Push Integration (Recommended)
+1. Create a new GitHub repository (e.g., `manish-athavar-portfolio`).
+2. Initialize Git, commit the files, and push them to your repository:
+   ```bash
+   git init
+   -b main
+   git add .
+   git commit -m "feat: complete interactive portfolio website"
+   git remote add origin https://github.com/Manish20A/manish-athavar-portfolio.git
+   git push -u origin main
+   ```
+3. Import this repository in your [Vercel Dashboard](https://vercel.com/new).
+4. Vercel will automatically detect the static project—click **Deploy**. Every git push will trigger an automated deploy!

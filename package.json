@@ -1,7 +1,7 @@
 {
-  "name": "nisarga-organic-prototype",
+  "name": "manish-athavar-portfolio",
   "version": "1.0.0",
-  "description": "Hyper-local organic grocery marketplace interactive prototype",
+  "description": "Personal portfolio of Manish Praveen Athavar - Computer Science & Engineering Student and Developer",
   "main": "index.html",
   "scripts": {
     "start": "npx http-server -p 3000"
