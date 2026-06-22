@@ -343,32 +343,14 @@ window.filterSkills = function(category, event) {
         event.currentTarget.classList.add('active');
     }
 
-    const groups = document.querySelectorAll('.skills-category-block');
     const cards = document.querySelectorAll('.skill-card');
 
-    if (category === 'all') {
-        groups.forEach(group => {
-            group.classList.remove('filtered-out');
-        });
-        cards.forEach(card => {
+    cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (category === 'all' || cardCat === category) {
             card.classList.remove('filtered-out');
-        });
-    } else {
-        groups.forEach(group => {
-            const groupCat = group.getAttribute('data-category-group');
-            if (groupCat === category) {
-                group.classList.remove('filtered-out');
-            } else {
-                group.classList.add('filtered-out');
-            }
-        });
-        cards.forEach(card => {
-            const cardCat = card.getAttribute('data-category');
-            if (cardCat === category) {
-                card.classList.remove('filtered-out');
-            } else {
-                card.classList.add('filtered-out');
-            }
-        });
-    }
+        } else {
+            card.classList.add('filtered-out');
+        }
+    });
 };

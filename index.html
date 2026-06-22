@@ -181,21 +181,32 @@
                     <div class="section-line"></div>
                 </div>
 
-                <!-- Interactive Filter Controls -->
-                <div class="skills-filter-container">
-                    <button class="filter-btn active" onclick="filterSkills('all', event)">All Stack</button>
-                    <button class="filter-btn" onclick="filterSkills('languages', event)">Languages & Dev</button>
-                    <button class="filter-btn" onclick="filterSkills('ai-cloud', event)">AI & Cloud</button>
-                    <button class="filter-btn" onclick="filterSkills('leadership', event)">Leadership & Strengths</button>
-                </div>
+                <!-- Unified Skills Console Box -->
+                <div class="skills-console-box">
+                    <!-- Console Header mimicking a window control bar -->
+                    <div class="console-header-bar">
+                        <div class="console-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="console-title">skills_manifest.json</div>
+                        <div class="console-status"><span class="pulse-dot"></span> Online</div>
+                    </div>
 
-                <div class="skills-display-container">
-                    
-                    <!-- Category 1: Languages & Development -->
-                    <div class="skills-category-block" data-category-group="languages">
-                        <h3 class="skills-category-title"><i class="fa-solid fa-code"></i> Languages & Development</h3>
+                    <!-- Interactive Filter Controls inside the Console -->
+                    <div class="skills-filter-container">
+                        <button class="filter-btn active" onclick="filterSkills('all', event)">All Stack</button>
+                        <button class="filter-btn" onclick="filterSkills('languages', event)">Languages & Dev</button>
+                        <button class="filter-btn" onclick="filterSkills('ai-cloud', event)">AI & Cloud</button>
+                        <button class="filter-btn" onclick="filterSkills('leadership', event)">Leadership & Strengths</button>
+                    </div>
+
+                    <!-- Scrollable Area -->
+                    <div class="skills-scroll-area">
                         <div class="skills-grid">
                             
+                            <!-- 1. JavaScript -->
                             <div class="skill-card" data-category="languages">
                                 <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
                                 <h4>JavaScript / ES6+</h4>
@@ -214,6 +225,7 @@
                                 </div>
                             </div>
                             
+                            <!-- 2. Python -->
                             <div class="skill-card" data-category="languages">
                                 <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
                                 <h4>Python</h4>
@@ -231,6 +243,7 @@
                                 </div>
                             </div>
                             
+                            <!-- 3. Java -->
                             <div class="skill-card" data-category="languages">
                                 <div class="skill-icon"><i class="fa-brands fa-java"></i></div>
                                 <h4>Java</h4>
@@ -247,6 +260,7 @@
                                 </div>
                             </div>
                             
+                            <!-- 4. C / C++ -->
                             <div class="skill-card" data-category="languages">
                                 <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
                                 <h4>C / C++</h4>
@@ -263,6 +277,7 @@
                                 </div>
                             </div>
                             
+                            <!-- 5. PHP -->
                             <div class="skill-card" data-category="languages">
                                 <div class="skill-icon"><i class="fa-brands fa-php"></i></div>
                                 <h4>PHP</h4>
@@ -279,6 +294,7 @@
                                 </div>
                             </div>
                             
+                            <!-- 6. Flutter -->
                             <div class="skill-card" data-category="languages">
                                 <div class="skill-icon">
                                     <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="display: block;">
@@ -298,14 +314,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- Category 2: AI & Cloud/Databases -->
-                    <div class="skills-category-block" data-category-group="ai-cloud">
-                        <h3 class="skills-category-title"><i class="fa-solid fa-brain"></i> AI & Cloud/Databases</h3>
-                        <div class="skills-grid">
-                            
+                            <!-- 7. LLMs & Prompt Eng. -->
                             <div class="skill-card" data-category="ai-cloud">
                                 <div class="skill-icon"><i class="fa-solid fa-robot"></i></div>
                                 <h4>LLMs & Prompt Eng.</h4>
@@ -323,6 +333,7 @@
                                 </div>
                             </div>
                             
+                            <!-- 8. RAG Architectures -->
                             <div class="skill-card" data-category="ai-cloud">
                                 <div class="skill-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                                 <h4>RAG Architectures</h4>
@@ -339,6 +350,7 @@
                                 </div>
                             </div>
                             
+                            <!-- 9. SQL & MongoDB -->
                             <div class="skill-card" data-category="ai-cloud">
                                 <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
                                 <h4>SQL & MongoDB</h4>
@@ -356,6 +368,7 @@
                                 </div>
                             </div>
                             
+                            <!-- 10. Firebase -->
                             <div class="skill-card" data-category="ai-cloud">
                                 <div class="skill-icon"><i class="fa-solid fa-fire"></i></div>
                                 <h4>Firebase</h4>
@@ -372,6 +385,7 @@
                                 </div>
                             </div>
                             
+                            <!-- 11. Cloud / AWS -->
                             <div class="skill-card" data-category="ai-cloud">
                                 <div class="skill-icon"><i class="fa-brands fa-aws"></i></div>
                                 <h4>Cloud / AWS</h4>
@@ -389,6 +403,7 @@
                                 </div>
                             </div>
                             
+                            <!-- 12. R Language -->
                             <div class="skill-card" data-category="ai-cloud">
                                 <div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>
                                 <h4>R Language</h4>
@@ -404,14 +419,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- Category 3: Leadership & Strengths -->
-                    <div class="skills-category-block" data-category-group="leadership">
-                        <h3 class="skills-category-title"><i class="fa-solid fa-users"></i> Leadership & Strengths</h3>
-                        <div class="skills-grid">
-                            
+                            <!-- 13. Global Communication -->
                             <div class="skill-card" data-category="leadership">
                                 <div class="skill-icon"><i class="fa-solid fa-comments"></i></div>
                                 <h4>Global Communication</h4>
@@ -429,6 +438,7 @@
                                 </div>
                             </div>
                             
+                            <!-- 14. Technical Leadership -->
                             <div class="skill-card" data-category="leadership">
                                 <div class="skill-icon"><i class="fa-solid fa-users"></i></div>
                                 <h4>Technical Leadership</h4>
@@ -446,6 +456,7 @@
                                 </div>
                             </div>
                             
+                            <!-- 15. Rapid Adaptation -->
                             <div class="skill-card" data-category="leadership">
                                 <div class="skill-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
                                 <h4>Rapid Adaptation</h4>
@@ -463,6 +474,7 @@
                                 </div>
                             </div>
                             
+                            <!-- 16. Workflow Automation -->
                             <div class="skill-card" data-category="leadership">
                                 <div class="skill-icon"><i class="fa-solid fa-gears"></i></div>
                                 <h4>Workflow Automation</h4>
@@ -480,6 +492,7 @@
                                 </div>
                             </div>
                             
+                            <!-- 17. Product Mindset -->
                             <div class="skill-card" data-category="leadership">
                                 <div class="skill-icon"><i class="fa-solid fa-user-tie"></i></div>
                                 <h4>Product Mindset</h4>
@@ -497,6 +510,7 @@
                                 </div>
                             </div>
                             
+                            <!-- 18. Public Speaking -->
                             <div class="skill-card" data-category="leadership">
                                 <div class="skill-icon"><i class="fa-solid fa-microphone"></i></div>
                                 <h4>Public Speaking</h4>
@@ -513,6 +527,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
