@@ -64,9 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const typewriterElement = document.getElementById('typewriter-text');
     const roles = [
         'Authentic "Builder"',
-        'Full-Stack Developer',
-        'Growth & Automation Engineer',
-        'Computer Science Student'
+        'AI & Cloud Practitioner',
+        'Automation Systems Architect',
+        'Innovative Full-Stack Developer',
+        'Aspiring Software Engineer',
+        'ADNOC Schools Graduate',
+        'IELTS 6.5 Certified Communicator',
+        'Open-Source Contributor',
+        'Efficient Script Developer',
+        'Analytical Problem Solver'
     ];
     
     let roleIndex = 0;
