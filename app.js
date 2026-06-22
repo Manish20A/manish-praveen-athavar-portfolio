@@ -1,5 +1,11 @@
 /* Main Portfolio JavaScript Logic for Manish Athavar */
 
+// Force browser to start at the top of the page on refresh (disable scroll restoration)
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Mobile Menu Toggling
     const menuToggle = document.getElementById('menu-toggle');
