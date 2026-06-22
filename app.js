@@ -276,29 +276,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// 5. Skills Tab Switcher function (Global Scope)
-window.switchSkillTab = function(event, tabId) {
-    // Get all tab content blocks
-    const tabContents = document.querySelectorAll('.tab-content');
-    tabContents.forEach(content => {
-        content.classList.remove('active');
-    });
-
-    // Get all tab buttons
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    tabBtns.forEach(btn => {
-        btn.classList.remove('active');
-    });
-
-    // Show selected tab content and activate button
-    const targetContent = document.getElementById(tabId);
-    if (targetContent) {
-        targetContent.classList.add('active');
-    }
-    
-    event.currentTarget.classList.add('active');
-};
-
 // 6. Contact Form Submission Logic (Global Scope)
 window.handleFormSubmit = function(event) {
     event.preventDefault();
