@@ -181,38 +181,105 @@
                     <div class="section-line"></div>
                 </div>
 
+                <!-- Interactive Filter Controls -->
+                <div class="skills-filter-container">
+                    <button class="filter-btn active" onclick="filterSkills('all', event)">All Stack</button>
+                    <button class="filter-btn" onclick="filterSkills('languages', event)">Languages & Dev</button>
+                    <button class="filter-btn" onclick="filterSkills('ai-cloud', event)">AI & Cloud</button>
+                    <button class="filter-btn" onclick="filterSkills('leadership', event)">Leadership & Strengths</button>
+                </div>
+
                 <div class="skills-display-container">
                     
                     <!-- Category 1: Languages & Development -->
-                    <div class="skills-category-block">
+                    <div class="skills-category-block" data-category-group="languages">
                         <h3 class="skills-category-title"><i class="fa-solid fa-code"></i> Languages & Development</h3>
                         <div class="skills-grid">
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="languages">
                                 <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
                                 <h4>JavaScript / ES6+</h4>
                                 <p>Dynamic scripting and DOM manipulation</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Proficiency</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 90%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">LiveScoreX</span>
+                                        <span class="proj-badge">CodeMotion</span>
+                                        <span class="proj-badge">OptiShrink</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="languages">
                                 <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
                                 <h4>Python</h4>
                                 <p>Automation scripts, ML pipelines, RAG</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Proficiency</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 85%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">VidGen-AI</span>
+                                        <span class="proj-badge">Automation</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="languages">
                                 <div class="skill-icon"><i class="fa-brands fa-java"></i></div>
                                 <h4>Java</h4>
                                 <p>Object-oriented logic & system software</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Proficiency</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 80%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">Academic Works</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="languages">
                                 <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
                                 <h4>C / C++</h4>
                                 <p>Low-level systems and algorithms</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Proficiency</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 80%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">SIT Labs</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="languages">
                                 <div class="skill-icon"><i class="fa-brands fa-php"></i></div>
                                 <h4>PHP</h4>
                                 <p>Backend infrastructure, legacy integrations</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Proficiency</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 75%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">Savayava NGO</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="languages">
                                 <div class="skill-icon">
                                     <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="display: block;">
                                         <path d="M14.314 0L2.3 12 6 15.7 21.684 0h-7.37zm.005 4.858L5.99 13.19l3.69 3.69L21.684 4.858h-7.365zM14.315 24l7.369-7.37-12-12-3.69 3.69 8.32 8.32L6.002 24h8.313z"/>
@@ -220,80 +287,231 @@
                                 </div>
                                 <h4>Flutter</h4>
                                 <p>Cross-platform mobile applications</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Proficiency</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 80%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">Nisarga Organic</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Category 2: AI & Cloud/Databases -->
-                    <div class="skills-category-block">
+                    <div class="skills-category-block" data-category-group="ai-cloud">
                         <h3 class="skills-category-title"><i class="fa-solid fa-brain"></i> AI & Cloud/Databases</h3>
                         <div class="skills-grid">
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="ai-cloud">
                                 <div class="skill-icon"><i class="fa-solid fa-robot"></i></div>
                                 <h4>LLMs & Prompt Eng.</h4>
                                 <p>Structured system prompts for Gemini & OpenAI</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Proficiency</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 90%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">VidGen-AI</span>
+                                        <span class="proj-badge">Portfolio Shell</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="ai-cloud">
                                 <div class="skill-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                                 <h4>RAG Architectures</h4>
                                 <p>Retrieval-Augmented Generation systems</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Proficiency</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 85%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">AI Prototypes</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="ai-cloud">
                                 <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
                                 <h4>SQL & MongoDB</h4>
                                 <p>Relational databases and NoSQL stores</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Proficiency</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 80%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">Savayava NGO</span>
+                                        <span class="proj-badge">Database Design</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="ai-cloud">
                                 <div class="skill-icon"><i class="fa-solid fa-fire"></i></div>
                                 <h4>Firebase</h4>
                                 <p>Authentication, Realtime Database, Firestore</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Proficiency</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 80%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">Nisarga Organic</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="ai-cloud">
                                 <div class="skill-icon"><i class="fa-brands fa-aws"></i></div>
                                 <h4>Cloud / AWS</h4>
                                 <p>API hosting, serverless scripts, Vercel</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Proficiency</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 75%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">Vercel Deploys</span>
+                                        <span class="proj-badge">Cloud Testing</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="ai-cloud">
                                 <div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>
                                 <h4>R Language</h4>
                                 <p>Statistical computing and data analytics</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Proficiency</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 70%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">Data Science SIT</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Category 3: Leadership & Strengths -->
-                    <div class="skills-category-block">
+                    <div class="skills-category-block" data-category-group="leadership">
                         <h3 class="skills-category-title"><i class="fa-solid fa-users"></i> Leadership & Strengths</h3>
                         <div class="skills-grid">
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="leadership">
                                 <div class="skill-icon"><i class="fa-solid fa-comments"></i></div>
                                 <h4>Global Communication</h4>
-                                <p>6.5 IELTS, ADNOC Schools international background</p>
+                                <p>6.5 IELTS, ADNOC Schools UAE background</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Execution</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 90%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">ADNOC UAE</span>
+                                        <span class="proj-badge">IELTS 6.5</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="leadership">
                                 <div class="skill-icon"><i class="fa-solid fa-users"></i></div>
                                 <h4>Technical Leadership</h4>
                                 <p>Class Representative, NGO team coordinator</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Execution</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 85%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">Class Rep</span>
+                                        <span class="proj-badge">Savayava NGO</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="leadership">
                                 <div class="skill-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
                                 <h4>Rapid Adaptation</h4>
                                 <p>Documentation-driven self-teaching on new APIs</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Execution</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 95%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">GenAI Pipelines</span>
+                                        <span class="proj-badge">Self Learning</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="leadership">
                                 <div class="skill-icon"><i class="fa-solid fa-gears"></i></div>
                                 <h4>Workflow Automation</h4>
                                 <p>Translating business needs into automated jobs</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Execution</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 90%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">VidGen-AI</span>
+                                        <span class="proj-badge">CodeMotion</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="leadership">
                                 <div class="skill-icon"><i class="fa-solid fa-user-tie"></i></div>
                                 <h4>Product Mindset</h4>
                                 <p>Designing for real-world constraints over theories</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Execution</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 85%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">LiveScoreX</span>
+                                        <span class="proj-badge">Nisarga Organic</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="skill-card">
+                            
+                            <div class="skill-card" data-category="leadership">
                                 <div class="skill-icon"><i class="fa-solid fa-microphone"></i></div>
                                 <h4>Public Speaking</h4>
                                 <p>High-impact presentations and stakeholder updates</p>
+                                <div class="skill-hover-panel">
+                                    <h5>Execution</h5>
+                                    <div class="skill-progress-bar">
+                                        <div class="skill-progress-fill" style="--percent: 85%;"></div>
+                                    </div>
+                                    <div class="skill-projects-label">Applied in:</div>
+                                    <div class="skill-projects-list">
+                                        <span class="proj-badge">SIT Seminars</span>
+                                        <span class="proj-badge">NGO Pitching</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
