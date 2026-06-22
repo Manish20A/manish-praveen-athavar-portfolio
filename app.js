@@ -146,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div>  <span class="highlight">skills</span>     - Programming languages and technical strengths</div>
                     <div>  <span class="highlight">projects</span>   - Key software engineering projects with details</div>
                     <div>  <span class="highlight">contact</span>    - Social links and communication profiles</div>
+                    <div>  <span class="highlight">repo</span>       - Link to this portfolio's GitHub repository</div>
                     <div>  <span class="highlight">clear</span>      - Clear the console screen</div>
                     <div>  <span class="highlight">help</span>       - Display this assistance list</div>
                 `;
@@ -202,6 +203,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div>• <span class="highlight">GitHub:</span> <a href="https://github.com/Manish20A" target="_blank" style="color: #45f3ff">github.com/Manish20A</a></div>
                 `;
                 break;
+            case 'repo':
+            case 'github':
+                outputRow.innerHTML = `
+                    <div class="text-command-header">GitHub Repository Link:</div>
+                    <div>• <span class="highlight">Portfolio Code:</span> <a href="https://github.com/Manish20A/manish-praveen-athavar-portfolio" target="_blank" style="color: #45f3ff">github.com/Manish20A/manish-praveen-athavar-portfolio</a></div>
+                    <div>• Feel free to star ⭐ the repository if you like the interactive terminal and design!</div>
+                `;
+                break;
             case 'clear':
                 // Remove all rows except the prompt row
                 const rows = terminalBody.querySelectorAll('.terminal-row');
@@ -231,6 +240,34 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         return text.replace(/[&<>"']/g, function(m) { return map[m]; });
     }
+
+    // 7. Active Navigation Link Highlighting on Scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinksList = document.querySelectorAll('.nav-link');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0
+     };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinksList.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 });
 
 // 5. Skills Tab Switcher function (Global Scope)

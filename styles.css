@@ -183,6 +183,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Sections Structure */
 section {
     padding: 7rem 1.5rem;
+    scroll-margin-top: 80px;
 }
 
 .section-container {
@@ -281,7 +282,7 @@ section {
     transition: var(--transition-fast);
 }
 
-.nav-link:hover {
+.nav-link:hover, .nav-link.active {
     color: var(--primary);
 }
 
@@ -308,21 +309,23 @@ section {
     gap: 1rem;
 }
 
-.btn-theme-toggle {
+.btn-theme-toggle, .btn-github-nav {
     background: none;
     border: none;
     color: var(--text-secondary);
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     padding: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
     transition: var(--transition-fast);
 }
 
-.btn-theme-toggle:hover {
+.btn-theme-toggle:hover, .btn-github-nav:hover {
     color: var(--primary);
+    transform: scale(1.1);
 }
 
 .menu-toggle {
