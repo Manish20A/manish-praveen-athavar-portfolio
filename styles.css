@@ -251,10 +251,17 @@ section {
 }
 
 .logo-symbol {
-    font-family: var(--font-mono);
-    color: var(--secondary);
-    font-weight: 700;
-    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-svg {
+    transition: transform var(--transition-smooth);
+}
+
+.nav-logo:hover .logo-svg {
+    transform: rotate(5deg) scale(1.1);
 }
 
 .logo-text {
@@ -1432,7 +1439,7 @@ section {
 }
 
 .footer-brand .logo-symbol {
-    font-size: 1.5rem;
+    justify-content: flex-start;
 }
 
 .footer-brand p {
