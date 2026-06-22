@@ -935,6 +935,12 @@ section {
     color: var(--text-secondary);
     font-size: 0.9rem;
     line-height: 1.5;
+    transition: opacity 0.3s var(--transition-smooth), transform 0.3s var(--transition-smooth);
+}
+
+.skill-card:hover p {
+    opacity: 0;
+    transform: translateY(-8px);
 }
 
 /* Skill Card Hover Panel */
@@ -943,17 +949,18 @@ section {
     bottom: -100%;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(10, 10, 18, 0.96);
+    height: 52%;
+    background: rgba(15, 15, 28, 0.94);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 1.5rem;
+    padding: 0.8rem 1.25rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 0.6rem;
+    gap: 0.5rem;
     transition: var(--transition-smooth);
-    border-top: 3px solid var(--primary);
+    border-top: 2px solid var(--primary);
+    box-sizing: border-box;
 }
 
 .skill-card:hover .skill-hover-panel {
@@ -961,12 +968,7 @@ section {
 }
 
 .skill-hover-panel h5 {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0;
+    display: none;
 }
 
 .skill-progress-bar {
@@ -974,7 +976,7 @@ section {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
 }
 
 .skill-progress-fill {
@@ -990,9 +992,7 @@ section {
 }
 
 .skill-projects-label {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--text-secondary);
+    display: none;
 }
 
 .skill-projects-list {
