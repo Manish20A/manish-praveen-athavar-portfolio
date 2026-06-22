@@ -283,6 +283,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // 6. Contact Form Submission Logic (Global Scope)
+// Replace 'YOUR_ACCESS_KEY' with your free access key from https://web3forms.com to receive emails
+const WEB3FORMS_ACCESS_KEY = 'YOUR_ACCESS_KEY';
+
 window.handleFormSubmit = function(event) {
     event.preventDefault();
     
@@ -304,26 +307,63 @@ window.handleFormSubmit = function(event) {
         submitBtn.innerHTML = '<span>Sending...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
     }
 
-    // Mock API request response (simulate 1.2s delay)
-    setTimeout(() => {
-        // Save to local storage as an archive database
+    const saveLocal = () => {
         const submissions = JSON.parse(localStorage.getItem('contact_messages') || '[]');
         submissions.push({
             name, email, subject, message, date: new Date().toISOString()
         });
         localStorage.setItem('contact_messages', JSON.stringify(submissions));
+    };
 
-        // Show Success Overlay
-        if (successOverlay) {
-            successOverlay.classList.remove('hidden');
-        }
+    // If Web3Forms Access Key is set up, make a real email-sending API request
+    if (WEB3FORMS_ACCESS_KEY && WEB3FORMS_ACCESS_KEY !== 'YOUR_ACCESS_KEY') {
+        const formData = new FormData();
+        formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+        formData.append("name", name);
+        formData.append("email", email);
+        formData.append("subject", subject);
+        formData.append("message", message);
+        formData.append("from_name", "Manish Portfolio Contact Form");
 
-        // Reset submit button state
-        if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = '<span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>';
-        }
-    }, 1200);
+        fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                saveLocal();
+                if (successOverlay) successOverlay.classList.remove('hidden');
+            } else {
+                alert("Email submission failed. Falling back to local storage saving.");
+                saveLocal();
+                if (successOverlay) successOverlay.classList.remove('hidden');
+            }
+        })
+        .catch(err => {
+            console.error("Web3Forms error:", err);
+            saveLocal();
+            if (successOverlay) successOverlay.classList.remove('hidden');
+        })
+        .finally(() => {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>';
+            }
+        });
+    } else {
+        // Fallback to high-fidelity simulated latency
+        setTimeout(() => {
+            saveLocal();
+            if (successOverlay) {
+                successOverlay.classList.remove('hidden');
+            }
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>';
+            }
+        }, 1200);
+    }
 };
 
 window.resetContactForm = function() {
