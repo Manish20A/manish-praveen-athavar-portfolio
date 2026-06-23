@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 return; // Return immediately, no outputs
             default:
-                outputRow.innerHTML = `<span style="color: #ff5f56">Command not found: "${escapeHtml(cmd)}". Type 'help' to view available options.</span>`;
+                outputRow.innerHTML = getChatbotResponse(cmd);
         }
 
         terminalBody.insertBefore(outputRow, promptRow);
@@ -251,6 +251,72 @@ document.addEventListener('DOMContentLoaded', () => {
             "'": '&#039;'
         };
         return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+    }
+
+    function getChatbotResponse(question) {
+        const q = question.toLowerCase().trim();
+        
+        if (q.includes('hello') || q.includes('hi') || q.includes('hey') || q.includes('greetings') || q.includes('yo')) {
+            return `
+                <div style="color: var(--secondary)"><i class="fa-solid fa-robot"></i> <strong>Manish_AI:</strong> Hello there! I'm Manish's virtual assistant. Ask me anything about his projects, skills, education, or contact details!</div>
+            `;
+        }
+        
+        if (q.includes('study') || q.includes('college') || q.includes('university') || q.includes('education') || q.includes('degree') || q.includes('school')) {
+            return `
+                <div style="color: var(--secondary)"><i class="fa-solid fa-robot"></i> <strong>Manish_AI:</strong> Manish is currently a 7th-semester <strong>Computer Science & Engineering</strong> student at <strong>Srinivas Institute of Technology (SIT)</strong>, Mangaluru, India. He also attended <strong>ADNOC Schools</strong> in the UAE for his foundational studies!</div>
+            `;
+        }
+
+        if (q.includes('project') || q.includes('live') || q.includes('work') || q.includes('optishrink') || q.includes('livescorex') || q.includes('codemotion')) {
+            return `
+                <div style="color: var(--secondary)"><i class="fa-solid fa-robot"></i> <strong>Manish_AI:</strong> Manish has built several notable projects, including:
+                    <div>• <strong>LiveScoreX:</strong> A real-time sports tracker Chrome extension.</div>
+                    <div>• <strong>CodeMotion:</strong> An automated VS-Code simulation video maker.</div>
+                    <div>• <strong>VidGen-AI:</strong> A generative automation pipeline combining Gemini and Remotion.</div>
+                    <div>• <strong>OptiShrink Pro:</strong> A client-side image optimizer tool (try the demo via the projects section!).</div>
+                Type <strong>'projects'</strong> to see the full list!</div>
+            `;
+        }
+
+        if (q.includes('skills') || q.includes('stack') || q.includes('languages') || q.includes('code') || q.includes('python') || q.includes('javascript') || q.includes('java') || q.includes('flutter')) {
+            return `
+                <div style="color: var(--secondary)"><i class="fa-solid fa-robot"></i> <strong>Manish_AI:</strong> Manish's stack includes:
+                    <div>• <strong>Languages:</strong> JavaScript, Python, Java, C/C++, PHP, R.</div>
+                    <div>• <strong>Tech:</strong> Flutter, Firebase, NodeJS, SQL, MongoDB, and Cloud (AWS/Vercel).</div>
+                Type <strong>'skills'</strong> to view his proficiency rates!</div>
+            `;
+        }
+
+        if (q.includes('contact') || q.includes('email') || q.includes('phone') || q.includes('reach') || q.includes('connect') || q.includes('linkedin') || q.includes('github')) {
+            return `
+                <div style="color: var(--secondary)"><i class="fa-solid fa-robot"></i> <strong>Manish_AI:</strong> You can contact Manish directly at:
+                    <div>• <strong>Email:</strong> <a href="mailto:manishathavar20@gmail.com" style="color: var(--secondary)">manishathavar20@gmail.com</a></div>
+                    <div>• <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/manish-athavar-/" target="_blank" style="color: var(--secondary)">linkedin.com/in/manish-athavar-</a></div>
+                    <div>• <strong>GitHub:</strong> <a href="https://github.com/Manish20A" target="_blank" style="color: var(--secondary)">github.com/Manish20A</a></div>
+                Type <strong>'contact'</strong> for a direct link set!</div>
+            `;
+        }
+
+        if (q.includes('who') || q.includes('about') || q.includes('bio') || q.includes('builder') || q.includes('manish')) {
+            return `
+                <div style="color: var(--secondary)"><i class="fa-solid fa-robot"></i> <strong>Manish_AI:</strong> Manish Praveen Athavar is a proactive developer with a builder mindset, focused on automating media and low-latency tools. He has an IELTS score of 6.5 and is ready for developer roles. Type <strong>'about'</strong> to query his full bio profile!</div>
+            `;
+        }
+
+        if (q.includes('help') || q.includes('commands') || q.includes('what can you do')) {
+            return `
+                <div style="color: var(--secondary)"><i class="fa-solid fa-robot"></i> <strong>Manish_AI:</strong> You can type terminal commands like <strong>'about'</strong>, <strong>'skills'</strong>, <strong>'projects'</strong>, <strong>'contact'</strong>, or <strong>'clear'</strong>. Or, just ask me normal questions like <em>"What is your stack?"</em> or <em>"Where did you study?"</em>!</div>
+            `;
+        }
+
+        // Default response for unhandled questions
+        return `
+            <div style="color: var(--secondary)">
+                <i class="fa-solid fa-robot"></i> <strong>Manish_AI:</strong> I'm not sure about that particular question, but I'm learning! 
+                <div>Try asking about Manish's <strong>'projects'</strong>, <strong>'skills'</strong>, <strong>'education'</strong>, or <strong>'contact'</strong> details.</div>
+            </div>
+        `;
     }
 
     // 7. Active Navigation Link Highlighting on Scroll
@@ -399,4 +465,48 @@ window.filterSkills = function(category, event) {
             card.classList.add('filtered-out');
         }
     });
+};
+
+// 8. Open Terminal Chatbot Trigger (Global Scope)
+window.openTerminalChatbot = function() {
+    const terminalSection = document.getElementById('terminal-section');
+    const terminalInput = document.getElementById('terminal-input');
+    const terminalContainer = document.querySelector('.terminal-container');
+    const terminalBody = document.getElementById('terminal-body');
+    const promptRow = terminalBody ? terminalBody.querySelector('.prompt-row') : null;
+
+    if (terminalSection) {
+        // Scroll smoothly to terminal
+        terminalSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Add highlight visual effect
+    if (terminalContainer) {
+        terminalContainer.classList.add('terminal-highlight-glow');
+        setTimeout(() => {
+            terminalContainer.classList.remove('terminal-highlight-glow');
+        }, 1500);
+    }
+
+    // Print welcome chatbot row inside terminal
+    if (terminalBody && promptRow) {
+        const chatRow = document.createElement('div');
+        chatRow.className = 'terminal-row';
+        chatRow.innerHTML = `
+            <div style="color: var(--secondary); margin-top: 0.5rem; border-left: 2px solid var(--secondary); padding-left: 0.75rem;">
+                <i class="fa-solid fa-robot"></i> <strong>Manish_AI:</strong> Hello there! How can I help you today?
+                <div>Ask me anything like: <em>"Where do you study?"</em>, <em>"What are your projects?"</em>, or <em>"Tell me about your UAE schooling"</em>!</div>
+            </div>
+        `;
+        terminalBody.insertBefore(chatRow, promptRow);
+        // Scroll terminal body down
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+    }
+
+    // Focus input
+    if (terminalInput) {
+        setTimeout(() => {
+            terminalInput.focus();
+        }, 600); // Wait for scroll to complete
+    }
 };
